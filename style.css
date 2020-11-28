@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blueBackground: #0b0e37;
+  --darkBlue: #04072d;
+  --lightBlue: #6ee8fd;
+  --hoverBlue: #3493e6;
+}
+
+body {
+  background-color: var(--blueBackground);
+  font-family: "Poppins", sans-serif;
+
+}
+
+.main-section {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.navbar__social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: var(--darkBlue);
+  border-radius: 50px;
+  margin-right: 15px;
+}
+
+.navbar__social a:hover {
+  background-color: var(--hoverBlue);
+}
+
+.subtitle {
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.title {
+  color: var(--lightBlue);
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.clock p:first-child {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.clock img {
+  align-self: flex-start;
+  margin-top: 1.5rem;
+}
+
+.email__form {
+  background-color: transparent;
+  border: 2px solid #6de7fc;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  color: white;
+}
+
+.email__form:focus {
+  background-color: transparent;
+  border: 2px solid #6de7fc;
+  color: white;
+}
+
+.form__button {
+  background-image: linear-gradient(to right, #3493e6, #6ee8fd);
+  border: 2px solid #6de7fc;
+  color: white;
+  border-radius: 50px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.form__button:hover {
+  border: 2px solid #6de7fc;
+  background-image: none;
+  color: white;
+}
+
+.image__rocket {
+  position: absolute;
+  left: 0;
+   top: 12%;
+}
+
+.image-server{
+    top: -215px;
+    left: -63px;
+    z-index: -1;
+    width: 157%;
+}
+
+@media screen and (min-width: 1200px) {
+  .email__form {
+    font-size: 0.8rem;
+  }
+  .form__button {
+    position: absolute;
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+    .image__rocket{
+        left: 0;
+         top: 50%;
+    }
+}
