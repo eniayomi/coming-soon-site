@@ -17,6 +17,39 @@
 </head>
 
 <body>
+
+
+
+<?php
+
+// To be included in same directory as form page
+// Enter your Host, username, password, database below.
+$con = mysqli_connect("127.0.0.1","root","8iu7*IU&","devopscrunch");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+// If form submitted, insert values into the database.
+if (isset($_REQUEST['email'])){
+	$email = stripslashes($_REQUEST['email']);
+	$email = mysqli_real_escape_string($con,$email);
+	$trn_date = date("Y-m-d H:i:s");
+        $query = "INSERT into `emails` (email, trn_date)
+VALUES ('$email', '$trn_date')";
+        $result = mysqli_query($con,$query);
+ if($result){
+            echo "<script>
+            alert('Thank you for joining the waiting list');
+          </script>";
+        }
+    }else{
+        echo "";
+        ?>
+
+<?php } ?>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top mb-0 " id="mainNav">
         <div class="container align-items-baseline d-flex mt-4  " data-aos="fade-right" data-aos-duration="2000">
@@ -76,7 +109,7 @@
                 </ul>
                 <!--Clock -->
                 <!--Form -->
-                <form action="index.php" method="POST">
+                <form action="" method="POST">
                     <div class="form-row  mt-4">
                         <div class="col-12 col-lg-8 mx-auto ">
                             <input type="text" class="form-control form-control-lg email__form " placeholder=""
@@ -110,6 +143,8 @@
         crossorigin="anonymous"></script>
     <!-- JS Custom Script -->
     <script src="./app.js"></script>
+
+    
 </body>
 
 </html>
